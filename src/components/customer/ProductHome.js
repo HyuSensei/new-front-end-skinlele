@@ -31,8 +31,7 @@ const ProductHome = () => {
         SẢN PHẨM NỔI BẬT
       </h3>
       <div className="row">
-        {listProduct &&
-          listProduct.length &&
+        {listProduct && listProduct.length > 0 ? (
           listProduct.map((item, index) => {
             return (
               <div
@@ -72,7 +71,12 @@ const ProductHome = () => {
                 </div>
               </div>
             );
-          })}
+          })
+        ) : (
+          <div style={{ textAlign: "center" }}>
+            <h4>LOADING...</h4>
+          </div>
+        )}
       </div>
     </div>
   );
